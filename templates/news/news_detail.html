@@ -1,0 +1,10 @@
+{% extends 'news/base.html' %}
+{% load filters %}
+
+{% block content %}
+<h1>Новость</h1>
+<h2>{{ news.title }}</h2>
+<p>Автор: {{ author_name }}</p>
+<p>Дата: {{ news.pub_date|date:"d-m-Y H:i" }}</p>
+<p>{{ news.content|censor }}</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'news/base.html' %}
+{% load filters %}
+
+{% block content %}
+  <h1>{% if news %}Редактировать новость{% else %}Создать новость{% endif %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% if news %}Сохранить{% else %}Создать{% endif %}">
+  </form>
+{% endblock %}
