@@ -1,0 +1,11 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+    <h1>Результат подписки</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <p>Что-то пошло не так.</p>
+    {% endif %}
+    <a href="{% url 'news:news_list' %}">Вернуться к новостям</a>
+{% endblock %}
